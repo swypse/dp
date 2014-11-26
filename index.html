@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+
+    <script>
+        // find max sum of max subarray [i, i+1, .., j-1, j]   
+        var a = [3, -1, -2, 4];
+        var l = a.length - 1;
+
+        function FP(j) {
+            return j == l ? a[j] : Math.max(a[j], a[j] + FP(j + 1));
+        }
+
+        function F(i) {
+            return i == l ? 0 : Math.max(a[i], a[i] + FP(i + 1), F(i + 1));
+        }
+
+        console.log("\r\n\r\nRESULT: " + F(0));
+    </script>
+
+</body>
+
+</html>
