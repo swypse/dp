@@ -8,3 +8,5 @@ Then F(0) returns 2 // sum(1,-2,-1,4)
 
 If array a = [3,-1,-2,2]
 Then F(0) returns 3 // sum(3)
+
+> TODO: return start and end position of subarray
