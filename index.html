@@ -9,18 +9,19 @@
 
     <script>
         // find max sum of max subarray [i, i+1, .., j-1, j]   
+        // a = [1,-2,-1,4,-1]
+        // F(0) // 2 (1-2-1+4)
+        // a = [3,-1,-2,2]
+        // F(0) // 3 (3)
         var a = [3, -1, -2, 4];
         var l = a.length - 1;
-
         function FP(j) {
             return j == l ? a[j] : Math.max(a[j], a[j] + FP(j + 1));
         }
-
         function F(i) {
             return i == l ? 0 : Math.max(a[i], a[i] + FP(i + 1), F(i + 1));
         }
-
-        console.log("\r\n\r\nRESULT: " + F(0));
+        console.log(F(0));
     </script>
 
 </body>
